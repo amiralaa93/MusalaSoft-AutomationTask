@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="QA Automation Task Suite" parallel="tests" thread-count="2">
+
+    <listeners>
+        <listener class-name="Analyzer.RetryTransformer"/>
+        <listener class-name="Listeners.TestAllureListener"/>
+    </listeners>
+
+    <test name="Automation tasks - Musala">
+        <parameter name="Browser" value="Chrome"/>
+        <parameter name="ENV" value="TEST"/>
+        <parameter name="URL" value="https://www.musala.com/"/>
+
+        <classes>
+            <class name="tests.contactUsTest"/>
+            <class name="tests.companySectionTest"/>
+            <class name="tests.joinUsSectionTest"/>
+            <class name="tests.positionsListTest"/>
+        </classes>
+    </test> <!-- configuration annotation Test -->
+</suite> <!-- Suite -->
